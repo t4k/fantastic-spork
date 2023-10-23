@@ -1,0 +1,26 @@
+name: Build
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Validate dependencies
+        uses: php-actions/composer@master
+        with:
+          command: validate
+
+      - name: Install dependencies
+        uses: php-actions/composer@master
+        with:
+          command: install no-interaction
+  
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-${{ github.sha }}
+          path: .
