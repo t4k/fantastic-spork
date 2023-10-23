@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         uses: php-actions/composer@master
         with:
-          command: install no-interaction
+          command: install --no-interaction
   
       - name: Upload artifact
         uses: actions/upload-artifact@v3
