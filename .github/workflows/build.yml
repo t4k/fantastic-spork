@@ -10,13 +10,14 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Validate dependencies
-        uses: php-actions/composer@master
+        uses: php-actions/composer@v6
         with:
           command: validate
 
       - name: Install dependencies
-        uses: php-actions/composer@master
+        uses: php-actions/composer@v6
         with:
+          php_extensions: gd
           command: install --no-interaction
   
       - name: Upload artifact
