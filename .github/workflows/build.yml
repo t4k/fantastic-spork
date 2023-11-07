@@ -22,4 +22,6 @@ jobs:
 
       - run: ls -aF
 
+      - run: export PATH="$PATH:./vendor/bin"
+
       - run: drush
