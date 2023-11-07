@@ -23,4 +23,4 @@ jobs:
       - run: ls -aF
       - run: pwd
 
-      - run: .vendor/bin/drush
+      - run: ${{ github.workspace }}/.vendor/bin/drush
