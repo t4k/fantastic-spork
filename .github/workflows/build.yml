@@ -21,5 +21,6 @@ jobs:
           command: install --no-interaction
 
       - run: ls -aF
+      - run: pwd
 
       - run: .vendor/bin/drush
