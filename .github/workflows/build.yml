@@ -23,5 +23,7 @@ jobs:
       - run: ls -aF
 
       - run: echo ".vendor/bin" >> $GITHUB_PATH
+      - run: echo "$PATH"
+      - run: echo "$GITHUB_PATH"
 
       - run: drush
