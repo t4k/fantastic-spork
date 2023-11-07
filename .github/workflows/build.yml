@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Validate dependencies
         uses: php-actions/composer@v6
@@ -19,11 +19,5 @@ jobs:
         with:
           php_extensions: gd
           command: install --no-interaction
-  
-      - run: zip -r build-${{ github.sha }}.zip .
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: build-${{ github.sha }}
-          path: build-${{ github.sha }}.zip
+      - run: ls -aF
